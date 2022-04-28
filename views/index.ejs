@@ -1,0 +1,20 @@
+
+
+  <div class="jumbotron">
+    <h1>Inventory Tracker </h1>
+    <p> Welcome to the Inventory Tracker </p>
+    <ul>
+      <% if (loggedIn) {%>
+      <li><a href="/profile">See your profile </a></li>
+      <li><a href="/todo">Add to your inventory list </a></li>
+      <li><a href="/inventoryPrinter">View your current inventory list </a></li>
+      <li><a href="/sold">View your sold items list </a></li>
+      <li><a href="/shoes"> Try the sneaker searching API! </a></li>
+    </ul><% }
+      else {%>
+    <p>You must <a href="/auth/google">
+      <span class="button">login</span>
+    </a> to view the options menu! </p>
+      <% } %>
+
+  </div>

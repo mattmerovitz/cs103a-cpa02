@@ -1,0 +1,21 @@
+
+
+  <div class="jumbotron">
+    <h1> Add to Inventory List for <%= user.googlename %> </h1>
+
+      <form method="post" action="todo">
+          new item: <input type="text" name="item" required><br>
+          size: <input type="text" name="size"><br>
+          sku: <input type="text" name="sku"><br>
+          price purchased: <input type="number" step="0.01" name="cost" required><br>
+
+
+
+
+        <br><input type="submit" value="Add to list">
+      </form>
+
+      <br><li><a href="/inventoryPrinter">View current inventory list</a></li>
+      <li><a href="/sold">View sold items</a></li>
+
+  </div>

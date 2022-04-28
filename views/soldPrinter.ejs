@@ -1,0 +1,48 @@
+<div class="jumbotron">
+
+    <p> Here is your list of sold items and profit! </p>
+
+      <table class="table table-bordered table-striped">
+     <thead>
+
+       <tr>
+         <th>Item</th>
+         <th>Size</th>
+         <th>SKU</th>
+         <th>Cost</th>
+         <th>Selling Price</th>
+         <th>Profit</th>
+         <th>Remove item</th>
+       </tr>
+
+     </thead>
+     <tbody>
+        <%
+        let total = 0
+        let totalCost = 0
+        let totalMade = 0
+         items.forEach(item => {
+            total += item.totalProfit
+            totalCost += item.cost
+            totalMade += item.soldprice
+            %>
+       <tr>
+        <td><%= item.item %></td>
+        <td><%= item.size %></td>
+        <td><%= item.sku %></td>
+        <td>$<%= item.cost.toFixed(2) %></td>
+        <td>$<%= item.soldprice.toFixed(2) %></td>
+        <td>$<%= item.totalProfit.toFixed(2) %></td>
+
+        <td><a href="/sold/remove/<%=item._id %>">Remove item</a></td>
+       <% }) %>
+
+     </tbody>
+   </table>
+   You paid $<%= totalCost.toFixed(2) %> for your sold items.<br>
+   You sold them for a total revenue of $<%= totalMade.toFixed(2) %>.<br>
+   This leaves a total profit of <text class="font-weight-bold">$<%= total.toFixed(2) %>!</text><br>
+   <li><a href="/todo">Add more items to your inventory</a></li>
+   <li><a href="/inventoryPrinter">View current inventory list</a></li>
+
+</div>
